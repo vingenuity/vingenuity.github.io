@@ -12,3 +12,6 @@ exclude:    ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendo
 
 # Other
 name:   Vingenuity
+
+# Output
+permalink:  /blog/:year/:month/:day/:title
