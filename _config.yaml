@@ -4,6 +4,7 @@ highlighter:    rouge
 
 # File Locations
 destination:    ./_site
+layouts_dir:    _layouts
 
 # Other
 name:   Vingenuity
