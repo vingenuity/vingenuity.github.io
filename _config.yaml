@@ -1,0 +1,9 @@
+# Conversion
+markdown:   kramdown
+highlighter:    rouge
+
+# File Locations
+destination:    ./_site
+
+# Other
+name:   Vingenuity
