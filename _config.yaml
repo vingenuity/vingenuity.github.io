@@ -12,6 +12,7 @@ exclude:    ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendo
 
 # Other
 name:   Vingenuity
+url:    http://vingenuity.github.io/
 
 # Output
 permalink:  /blog/:year/:month/:day/:title
