@@ -6,5 +6,8 @@ highlighter:    rouge
 destination:    ./_site
 layouts_dir:    _layouts
 
+# File Reading
+exclude:    ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/", "README.md"]
+
 # Other
 name:   Vingenuity
