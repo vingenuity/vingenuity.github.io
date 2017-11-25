@@ -1,2 +1,2 @@
-# Jekyll's working directory
-_site/
+# Hugo's working directory
+/public
