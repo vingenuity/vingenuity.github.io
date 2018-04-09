@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Vingenuity</title>
+    <link>http://localhost:1313/tags/project/</link>
+    <description>Recent content in Project on Vingenuity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://localhost:1313/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Super Slash &#39;n Grab</title>
+      <link>http://localhost:1313/project/super-slash-n-grab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/project/super-slash-n-grab/</guid>
+      <description>Overview Description Super Slash &amp;lsquo;n Grab is a four-player &amp;ldquo;hack and stash&amp;rdquo; game in the style of arcade classics like Gauntlet. Players take on the role of a group of thieves who are on a quest to retrieve their stolen Thieves&amp;rsquo; Code from the evil King&amp;rsquo;s Guard.
+While players are technically working as a team, their true objective is to be the richest thieves at the end of each level.</description>
+    </item>
+    
+  </channel>
+</rss>

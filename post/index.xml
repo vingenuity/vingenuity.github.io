@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vingenuity</title>
-    <link>http://vingenuity.github.io/</link>
-    <description>Recent content on Vingenuity</description>
+    <title>Posts on Vingenuity</title>
+    <link>http://vingenuity.github.io/post/</link>
+    <description>Recent content in Posts on Vingenuity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 07 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://vingenuity.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://vingenuity.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -33,15 +33,6 @@
       <description>&lt;p&gt;So, I got laid off from Robot on Monday. I&amp;rsquo;m still kind of depressed thinking about it, but it&amp;rsquo;s time to move forward. I&amp;rsquo;m going to take this layoff as an opportunity to start a number of things over in my life.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
-      <link>http://vingenuity.github.io/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://vingenuity.github.io/resume/</guid>
-      <description></description>
     </item>
     
   </channel>
