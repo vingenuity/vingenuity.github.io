@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Vingenuity</title>
-    <link>http://vingenuity.github.io/post/</link>
+    <link>https://vingenuity.github.io/post/</link>
     <description>Recent content in Posts on Vingenuity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 07 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://vingenuity.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vingenuity.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Site Rework Part 1</title>
-      <link>http://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</link>
+      <link>https://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</guid>
+      <guid>https://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</guid>
       <description>&lt;p&gt;As mentioned in my previous post, I am going to be spending the next few weeks completely reworking the Vingenuity website.&lt;/p&gt;
 
 &lt;p&gt;In general, when redoing a previous project or tool, it&amp;rsquo;s a good idea to think about what was positive and negative about the original, as well as do a little bit of advance planning. That&amp;rsquo;s what today&amp;rsquo;s post is about.&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Starting Over</title>
-      <link>http://vingenuity.github.io/post/2018-04-04-starting-over/</link>
+      <link>https://vingenuity.github.io/post/2018-04-04-starting-over/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://vingenuity.github.io/post/2018-04-04-starting-over/</guid>
+      <guid>https://vingenuity.github.io/post/2018-04-04-starting-over/</guid>
       <description>&lt;p&gt;So, I got laid off from Robot on Monday. I&amp;rsquo;m still kind of depressed thinking about it, but it&amp;rsquo;s time to move forward. I&amp;rsquo;m going to take this layoff as an opportunity to start a number of things over in my life.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

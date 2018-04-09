@@ -3,74 +3,74 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</loc>
+    <loc>https://vingenuity.github.io/post/2018-04-07-site-rework-01-reasoning-and-goals/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/post/2018-04-04-starting-over/</loc>
+    <loc>https://vingenuity.github.io/post/2018-04-04-starting-over/</loc>
     <lastmod>2018-04-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/categories/</loc>
+    <loc>https://vingenuity.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/tags/hugo/</loc>
+    <loc>https://vingenuity.github.io/tags/hugo/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/tags/miscellaneous/</loc>
-    <lastmod>2018-04-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://vingenuity.github.io/categories/miscellaneous/</loc>
+    <loc>https://vingenuity.github.io/tags/miscellaneous/</loc>
     <lastmod>2018-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/post/</loc>
+    <loc>https://vingenuity.github.io/categories/miscellaneous/</loc>
+    <lastmod>2018-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vingenuity.github.io/post/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/resume/</loc>
+    <loc>https://vingenuity.github.io/resume/</loc>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/tags/squarespace/</loc>
+    <loc>https://vingenuity.github.io/tags/squarespace/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/tags/</loc>
+    <loc>https://vingenuity.github.io/tags/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/</loc>
+    <loc>https://vingenuity.github.io/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/tags/website/</loc>
+    <loc>https://vingenuity.github.io/tags/website/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vingenuity.github.io/categories/website/</loc>
+    <loc>https://vingenuity.github.io/categories/website/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
