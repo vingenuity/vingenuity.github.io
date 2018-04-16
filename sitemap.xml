@@ -42,6 +42,11 @@
   </url>
   
   <url>
+    <loc>https://vingenuity.github.io/project/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vingenuity.github.io/resume/</loc>
   </url>
   
@@ -49,6 +54,10 @@
     <loc>https://vingenuity.github.io/tags/squarespace/</loc>
     <lastmod>2018-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vingenuity.github.io/project/super-slash-n-grab/</loc>
   </url>
   
   <url>
