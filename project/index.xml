@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Cobalt</title>
+      <link>https://vingenuity.github.io/project/cobalt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vingenuity.github.io/project/cobalt/</guid>
+      <description>Cobalt was a cancelled first-person shooter game made for Windows and PS4 using Unreal Engine 4.</description>
+    </item>
+    
+    <item>
       <title>Orcs Must Die! Unchained</title>
       <link>https://vingenuity.github.io/project/orcs-must-die-unchained/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -50,6 +59,17 @@
       
       <guid>https://vingenuity.github.io/project/super-slash-n-grab/</guid>
       <description>&lt;p&gt;Super Slash &amp;lsquo;n Grab is a four-player &amp;ldquo;hack and stash&amp;rdquo; game in the style of arcade classics like Gauntlet.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vingine</title>
+      <link>https://vingenuity.github.io/project/vingine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vingenuity.github.io/project/vingine/</guid>
+      <description>&lt;p&gt;Vingine is my custom C++ game engine that I worked on during my time at the SMU Guildhall.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
