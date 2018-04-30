@@ -35,3 +35,24 @@
 	width: 50px;
 	height: 50px;
 }
+
+/* Bring back the default list styling in posts, which is normally overridden by Materialize CSS */
+article.post ul{
+	padding-left: 40px;
+}
+
+article.post ul li{
+	list-style-type: disc;
+}
+
+/*	A big thanks to user mmla on stackoverflow for this Flexbox trick:
+		https://stackoverflow.com/questions/44846068/css-equal-height-columns */
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*	Fix padding and margin to the left of the post date */
+.row .col.post-date {
+	margin-left: 0;
+}

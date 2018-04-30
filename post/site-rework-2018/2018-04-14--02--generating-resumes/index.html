@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="generator" content="Hugo 0.37.1" />
+      <title> Vingenuity  - Site Rework Part 2  </title>
+		
+      <link type="text/css" rel="stylesheet" href="/css/prism.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
+		<script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
+
+      
+      <link type="text/css" rel="stylesheet" href="/css/hugo-materialized.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/resume-material.css"/>
+
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+   </head>
+    
+   <body>
+      <ul id="slide-out" class="sidenav sidenav-fixed blue darken-4">
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+         <li><div class="user-view">
+				<div class="background-frame">
+               <img class="background-image" src="/images/vingenuity-logo.png">
+				</div>
+				<div class="text-frame">
+               <p id="name-text" class=" white-text">Vincent Kocks</p>
+               <p id="description-text" class=" white-text">Game Programmer</p>
+					
+				</div>
+				<div class="social-frame">
+					
+					
+
+
+
+	<a class="social-icon" href="mailto:vincent@vingenuity.net"><i class="hoverable fa fa-envelope  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://github.com/vingenuity"><i class="hoverable fa fa-github  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://www.linkedin.com/in/vingenuity"><i class="hoverable fa fa-linkedin-square  fa-lg  white-text"></i></a>
+
+
+
+	<a class="social-icon" href="skype:vingenuity?chat"><i class="hoverable fa fa-skype  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://vimeo.com/vingenuity"><i class="hoverable fa fa-vimeo  fa-lg  white-text"></i></a>
+
+
+				</div>
+         </div></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+	
+		<li class="">
+			<a href="/">
+				
+				
+					<i class="fa fa-home  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Home</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/project/">
+				
+				
+					<i class="fa fa-wrench  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Projects</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/post/">
+				
+				
+					<i class="fa fa-edit  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Posts</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/resume/">
+				
+				
+					<i class="fa fa-paperclip  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Resume</span>
+				
+			</a>
+		</li>
+	
+
+      </ul>
+		
+		<nav class="hide-on-large-only">
+			
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+				<a href="/"><div class="brand-logo center">
+               <img class="left" src="/images/vingenuity-logo.png">
+					Vingenuity
+				</div></a>
+			</div>
+		</nav>
+
+      <main>
+         <div class="container">
+            
+
+
+
+<div class="row">
+	<div class="col s12 m9 l10">
+		<div class="row flex z-depth-1">
+			<div class="col s2 grey lighten-4">
+				<h3 class="center-align black-text" >14</h3>
+				<h5 class="center-align grey-text text-darken-2" >Apr</h5>
+				<p class="center-align grey-text text-darken-1" >2018</p>
+			</div>
+			<div class="col s10 blue darken-2">
+				<h3 class="grey-text text-lighten-4">Site Rework Part 2</h3>
+				
+					<h4 class="italic grey-text text-lighten-2">Generating Resumes Automatically</h4>
+				
+			</div>
+		</div>
+
+		<article class="post">
+			<p>As mentioned in <a href="/post/site-rework-2018/2018-04-07--01--reasoning-and-goals/">my previous post</a>, one of the primary reasons for the site rework was to reduce the amount of repetition and copypasta done across the website. The primary offender with repetition by far in my previous workflow was the resumes. In today&rsquo;s post, I am going to show my new workflow for producing my resumes that heavily reduces this repetition.</p>
+
+<p></p>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="document-formats">
+<h4 id="document-formats">Document Formats</h4>
+
+<p>Before discussing the workflows, it&rsquo;s worth taking a moment to enumerate some of the common document formats, as well as why they are useful for resumes.</p>
+
+<ul>
+<li><strong>DOCX</strong>
+
+<ul>
+<li>DOCX is the modern version of Microsoft&rsquo;s Word application. (The original format was DOC.)</li>
+<li>Due to the ubiquity of Microsoft Office software in the workplace, this is by far the most common document format requested when applying for work.</li>
+<li>Even though it is based in XML, due to Word&rsquo;s proprietary nature, there aren&rsquo;t many tools that can work with this format.</li>
+</ul></li>
+<li><strong>PDF</strong>
+
+<ul>
+<li>PDF is Adobe&rsquo;s semi-proprietary document format.</li>
+<li>While it&rsquo;s not quite as popular as DOCX, Adobe&rsquo;s PDF format is generally accepted by most workplaces.</li>
+<li>Additionally, since PDF format is semi-open, there are many tools that can read, write, and modify this format.</li>
+</ul></li>
+<li><strong>HTML</strong>
+
+<ul>
+<li>HTML is the format used for rendering content in the browser.</li>
+<li>Even though there are now web-based document renderers for the previous two document formats, having an HTML version of your resume is useful as a fallback when the other methods are not working correctly.</li>
+</ul></li>
+<li><strong>TXT</strong>
+
+<ul>
+<li>TXT is the most basic of text document formats, with little to no formatting support.</li>
+<li>Many job submission websites request a TXT version of your resume. This is very rarely viewed by humans; instead, the TXT resume will be parsed for keywords by some variety of HR software.</li>
+</ul></li>
+</ul>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="original-workflow">
+<h4 id="original-workflow">Original Workflow</h4>
+
+<p>Here&rsquo;s a diagram of my original workflow:</p>
+
+<figure class="mermaid card-panel grey lighten-5" id="workflow-original">
+    
+graph TD;
+start(("Resume<br/>Needs<br/>Update")) ==> cond1;
+
+cond2{"Updating<br/>Styling?"};
+cond1{"Updating<br/>Content?"};
+cond1 == No ==> cond2;
+cond1 == Yes ==> manual1;
+
+manual1["Update TXT"];
+manual2["Update DOCX"];
+manual3["Update HTML"];
+manual1 ==> manual2;
+manual2 ==> manual3;
+manual3 ==> cond2;
+
+manual4["Update HTML"];
+manual5["Update DOCX"];
+cond2 == No ==> manual6;
+cond2 == Yes ==> manual4;
+manual4 ==> manual5;
+manual5 ==> manual6;
+
+manual6["Export DOCX to PDF"] ==> finish;
+finish(("Resumes<br/>Updated"));
+
+final1("Resume (HTML)");
+manual4 -.-> final1;
+manual3 --> final1;
+
+final2("Resume (DOCX)");
+manual5 -.-> final2;
+manual2 --> final2;
+final2 -.-> manual6;
+final2 --> manual6;
+
+final3("Resume (PDF)");
+manual6 -.-> final3;
+manual6 --> final3;
+
+final4("Resume (TXT)");
+manual1 --> final4;
+
+</figure>
+
+<p>As you can see, this workflow, while effective, is far from optimal.</p>
+
+<p>Each content update requires three manual steps, and each format update requires two manual steps. While the PDF and DOCX versions do share content and formatting (if somewhat glitchily), the export process for DOCX to PDF is completely manual. In fact, every step in this process is manual!</p>
+
+<p>Let&rsquo;s take a look at what a more automated process might look like&hellip;</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="ideal-workflow">
+<h4 id="ideal-workflow">Ideal Workflow</h4>
+
+<p>In an ideal world, my workflow would look  something like the diagram below:</p>
+
+<figure class="mermaid card-panel grey lighten-5" id="workflow-ideal">
+    
+graph TD;
+start(("Resume<br/>Needs<br/>Update"));
+start ==> cond1;
+
+cond1{"Updating<br/>Content?"};
+cond2{"Updating<br/>Styling?"};
+cond1 == No ==> cond2;
+cond1 == Yes ==> manual1;
+
+manual1["Update Content"];
+manual1 ==> cond2;
+
+manual2["Update Style"];
+cond2 == No ==> manual3;
+cond2 == Yes ==> manual2;
+manual2 ==> manual3;
+
+final1("Resume (HTML)");
+auto1 -.-> final1;
+auto1 --> final1;
+
+final2("Resume (DOCX)");
+auto2 -.-> final2;
+auto2 --> final2;
+
+final3("Resume (PDF)");
+auto3 -.-> final3;
+auto3 --> final3;
+
+final4("Resume (TXT)");
+auto4 --> final4;
+
+manual3["Run Generator Script"] ==> auto1;
+auto1>"Generate HTML"] ==> auto2;
+auto2>"Generate DOCX"] ==> auto3;
+auto3>"Generate PDF"] ==> auto4;
+auto4>"Generate TXT"] ==> finish;
+finish(("Resumes<br/>Updated"));
+
+content1("Content File");
+manual1 --> content1;
+content1 --> auto1
+content1 --> auto2
+content1 --> auto3
+content1 --> auto4
+
+style1("Style File");
+manual2 -.-> style1;
+style1 -.-> auto1
+style1 -.-> auto2
+style1 -.-> auto3
+
+</figure>
+
+<p>In this workflow, content and styling are fully separated from each other, as in proper UI practice. Furthermore, since every document&rsquo;s content and styling are sourced from the same pair of files, I would only have to edit a single document in order to update everything. Additionally, due to being done via a script, the update process is quick and easy.</p>
+
+<p>Unfortunately, with the feature sets of the software of which I am aware, there is no way to produce a workflow with this ideal structure. However, let&rsquo;s take a look at my new workflow, which is definitely closer to this ideal than before&hellip;</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="new-workflow">
+<h4 id="new-workflow">New Workflow</h4>
+
+<p>Here is a diagram of the new workflow I am using now:</p>
+
+<figure class="mermaid card-panel grey lighten-5" id="workflow-new">
+    
+graph TD;
+start(("Resume<br/>Needs<br/>Update"));
+start ==> cond1;
+
+cond1{"Updating<br/>Content?"};
+cond2{"Updating<br/>Styling?"};
+cond1 == No ==> cond2;
+cond1 == Yes ==> manual1;
+
+manual1["Update Markdown"];
+manual1==>cond2;
+
+manual3["Update DOCX"]
+manual2["Update CSS"];
+cond2 == No ==> manual4;
+cond2 == Yes ==> manual2;
+manual2 ==> manual3;
+manual3 ==> manual4;
+
+final1("Resume (DOCX)");
+auto1 --> final1;
+auto1 -.-> final1;
+
+final2("Resume (HTML)");
+auto2 --> final2;
+auto2 -.-> final2;
+final2 --> auto3;
+final2 -.-> auto3;
+
+final3("Resume (PDF)");
+auto3 --> final3;
+auto3 -.-> final3;
+
+manual4["Run PowerShell Script"] ==> auto1;
+auto1>Generate DOCX] ==> auto2;
+auto2>Generate HTML] ==> auto3;
+auto3>Generate PDF] ==> finish;
+finish(("Resumes<br/>Updated"));
+
+content1("Content (MD)");
+manual1-->content1;
+content1 --> auto1;
+content1 --> auto2;
+style1("Style (DOCX)");
+manual3 -.-> style1;
+style1 -.-> auto1;
+style2("Style (CSS)");
+manual2 -.-> style2;
+style2 -.->auto2;
+
+</figure>
+
+<p>As the chart shows, the new workflow has significantly in both repetition and automation. When updating content, only one file needs to be manually updated instead of three. Additionally, the entire export/generation process is automatic once content has been generated.</p>
+
+<p>However, there are still definitely some flaws with this new workflow. Two style files must be kept synchronized (DOCX and CSS) when updates are made, which is exactly the same level of work as before. Additionally, the TXT version is not currently in the workflow, which I will discuss more about in a later section.</p>
+
+<p>Now let&rsquo;s walk through the stages of the workflow and see how each works.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="updating-content">
+<h4 id="updating-content">Updating Content</h4>
+
+<p>The resume&rsquo;s content is now written in Markdown. In general, writing content in Pandoc&rsquo;s variant of Markdown is extremely straightforward once you&rsquo;ve grasped the syntax. However, there are a few small gotchas with working in Markdown with Pandoc that are worth discussing, all of which can be shown with the header block from my resume:</p>
+
+<pre class="card-panel line-numbers" data-start="1">
+    <code class="language-markdown">
+        
++:--------------------+:-------------------------------------------------------+-----------------------------:+
+| ![](logo-sized.png) | [Vincent Kocks]{custom-style="Top Text"}              \|  **vincent@vingenuity.net** \|
+|                     | [Game Programmer]{custom-style="Top Subtext"}          |   http://www.vingenuity.net \|
+|                     |                                                        |              (940) 631-5605 \|
++---------------------+--------------------------------------------------------+------------------------------+
+
+    </code>
+</pre>
+
+<h5 id="images">Images</h5>
+
+<p>Images use an extension of Markdown&rsquo;s link syntax. However, there is no good way of sizing the image using styling.</p>
+
+<h5 id="custom-styles">Custom Styles</h5>
+
+<h5 id="multiple-lines-in-tables">Multiple Lines in Tables</h5>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="generation-script">
+<h5 id="generation-script">Generation Script</h5>
+
+<p>Let&rsquo;s start the walkthrough of the new workflow by looking at the generation script. Here are the important parts of the script:</p>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-powershell">
+        
+param([string]$markdown_content_path, [string]$output_file_name,
+      [string]$style_css_path, [string]$style_docx_path, [string]$yaml_metadata_path,
+      [int]$pdf_margins_mm=13)
+
+$current_date_formatted = Get-Date -UFormat "%Y-%m-%d"
+$pandoc_args_standard = @($markdown_content_path, $yaml_metadata_path, "--standalone", "--metadata", "date=`"$current_date_formatted`"")
+
+$pandoc_arguments_docx = @("-o", "$output_file_name.docx", "--from", "markdown+bracketed_spans", "--to", "docx+styles");
+$pandoc_arguments_docx += $pandoc_args_standard;
+if($style_docx_path)
+{
+    $pandoc_arguments_docx += "--reference-doc=$style_docx_path";
+}
+Call-WithRedirection pandoc $pandoc_arguments_docx
+
+$html_output_file_name = "$output_file_name.html"
+$pandoc_arguments_html = @("-o", $html_output_file_name, "--section-divs");
+if($style_css_path)
+{
+    $pandoc_arguments_html += "--css=$style_css_path";
+}
+$pandoc_arguments_html += $pandoc_args_standard;
+Call-WithRedirection pandoc $pandoc_arguments_html
+
+# wkhtmltopdf is not marked as a DPI-aware application in Windows, so by OS convention, it always sees the DPI setting as 96.
+$wk_zoom_offset = Calculate-ZoomOffsetForDPI 96;
+$wk_arguments = @("--quiet", "--zoom", $wk_zoom_offset);
+$wk_arguments += @("--margin-top", $pdf_margins_mm, "--margin-bottom", $pdf_margins_mm, "--margin-left", $pdf_margins_mm, "--margin-right", $pdf_margins_mm);
+$wk_arguments += @($html_output_file_name, "$output_file_name.pdf")
+Call-WithRedirection wkhtmltopdf $wk_arguments
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="pandoc">
+<h5 id="pandoc">Pandoc</h5>
+
+<h6 id="gotchas">Gotchas</h6>
+
+<ul>
+<li>Metadata</li>
+<li>Metadata Styling</li>
+<li>DOCX Styling</li>
+<li></li>
+</ul>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="wkhtmltopdf">
+<h5 id="wkhtmltopdf">wkhtmltopdf</h5>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="future-work">
+<h4 id="future-work">Future Work</h4>
+
+</section></p>
+		</article>
+
+		
+<div id="socialshare">
+    <span class="grey-text text-darken-3">Share this: 
+
+        <a href="" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Email to a friend" onclick="javascript:window.location='mailto:?subject=Interesting post&body=I thought you might find this post interesting: ' + window.location;return false;"><i class="fa fa-lg fa-envelope-o"></i></a>
+        
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fvingenuity.github.io%2fpost%2fsite-rework-2018%2f2018-04-14--02--generating-resumes%2f" target="_blank" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Share on facebook" ><i class="fa fa-lg fa-facebook-square"></i></a>
+        
+        <a href="#" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="tweet about this"><i class="fa fa-lg fa-twitter"></i></a>
+
+        <a href="//www.reddit.com/submit" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Share on reddit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"><i class="fa fa-lg fa-reddit"></i></a>
+
+</span>
+</div>
+		<div class="divider"></div>
+
+		<div class="section row">
+			<div class="col s3 left-align">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/post/site-rework-2018/2018-04-07--01--reasoning-and-goals/"><i class="fa fa-angle-left"></i> Last Post</a>
+			</div>
+
+			<div class="col s4 center-align offset-s1">
+				<a class="waves-effect waves-light btn" href="/post/#2018-04-14--02--generating-resumes">All Posts</a>
+			</div>
+
+			<div class="col s3 right-align offset-s1">
+				<a class="waves-effect waves-light btn disabled" href="">Next Post <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	
+		<div class="col hide-on-small-only m3 l2">
+			<div class="pinned">
+				
+				
+
+
+
+
+
+<div class="table-of-contents">
+	<ul class="toc-hmap[page:Page(&#34;Site Rework Part 2&#34;) wrapper_class:table-of-contents]">
+	
+	
+	
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#document-formats">Document Formats</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#original-workflow">Original Workflow</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#ideal-workflow">Ideal Workflow</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#new-workflow">New Workflow</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#updating-content">Updating Content</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#generation-script">Generation Script</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#pandoc">Pandoc</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#wkhtmltopdf">wkhtmltopdf</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#future-work">Future Work</a>
+		</li>
+	
+
+	</ul>
+</div>
+
+			</div>
+		</div>
+	
+</div>
+
+
+         </div>
+      </main>
+
+      <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+      <script type="text/javascript" src="/js/mermaid.min.js"></script>
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+
+      <script type="text/javascript" src="/js/resume-material.js"></script>
+
+   </body>
+
+   <footer>
+      <div class="footer-copyright center-align">
+         <div class="container">
+			   
+				   
+				
+				
+			   
+				   
+			   
+				
+            <p class="">© 2014-2018 Vincent Kocks</p>
+         </div>
+      </div>
+   </footer>
+
+</html>

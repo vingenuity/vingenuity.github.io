@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="generator" content="Hugo 0.37.1" />
+      <title> Vingenuity  - Site Rework Part 1  </title>
+		
+      <link type="text/css" rel="stylesheet" href="/css/prism.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
+		<script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
+
+      
+      <link type="text/css" rel="stylesheet" href="/css/hugo-materialized.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/resume-material.css"/>
+
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+   </head>
+    
+   <body>
+      <ul id="slide-out" class="sidenav sidenav-fixed blue darken-4">
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+         <li><div class="user-view">
+				<div class="background-frame">
+               <img class="background-image" src="/images/vingenuity-logo.png">
+				</div>
+				<div class="text-frame">
+               <p id="name-text" class=" white-text">Vincent Kocks</p>
+               <p id="description-text" class=" white-text">Game Programmer</p>
+					
+				</div>
+				<div class="social-frame">
+					
+					
+
+
+
+	<a class="social-icon" href="mailto:vincent@vingenuity.net"><i class="hoverable fa fa-envelope  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://github.com/vingenuity"><i class="hoverable fa fa-github  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://www.linkedin.com/in/vingenuity"><i class="hoverable fa fa-linkedin-square  fa-lg  white-text"></i></a>
+
+
+
+	<a class="social-icon" href="skype:vingenuity?chat"><i class="hoverable fa fa-skype  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://vimeo.com/vingenuity"><i class="hoverable fa fa-vimeo  fa-lg  white-text"></i></a>
+
+
+				</div>
+         </div></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+	
+		<li class="">
+			<a href="/">
+				
+				
+					<i class="fa fa-home  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Home</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/project/">
+				
+				
+					<i class="fa fa-wrench  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Projects</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/post/">
+				
+				
+					<i class="fa fa-edit  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Posts</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/resume/">
+				
+				
+					<i class="fa fa-paperclip  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Resume</span>
+				
+			</a>
+		</li>
+	
+
+      </ul>
+		
+		<nav class="hide-on-large-only">
+			
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+				<a href="/"><div class="brand-logo center">
+               <img class="left" src="/images/vingenuity-logo.png">
+					Vingenuity
+				</div></a>
+			</div>
+		</nav>
+
+      <main>
+         <div class="container">
+            
+
+
+
+<div class="row">
+	<div class="col s12 m9 l10">
+		<div class="row flex z-depth-1">
+			<div class="col s2 grey lighten-4">
+				<h3 class="center-align black-text" >07</h3>
+				<h5 class="center-align grey-text text-darken-2" >Apr</h5>
+				<p class="center-align grey-text text-darken-1" >2018</p>
+			</div>
+			<div class="col s10 blue darken-2">
+				<h3 class="grey-text text-lighten-4">Site Rework Part 1</h3>
+				
+					<h4 class="italic grey-text text-lighten-2">Reasoning and Goals</h4>
+				
+			</div>
+		</div>
+
+		<article class="post">
+			<p>As mentioned in my previous post, I am going to be spending the next few weeks completely reworking the Vingenuity website.</p>
+
+<p>In general, when redoing a previous project or tool, it&rsquo;s a good idea to think about what was positive and negative about the original, as well as do a little bit of advance planning. That&rsquo;s what today&rsquo;s post is about.</p>
+
+<p></p>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="old-site-postmortem">
+<h4 id="old-site-postmortem">Old Site Postmortem</h4>
+
+<p>Previously, I used Squarespace to design this site. While I was satisfied overall with my experience with their website building tools, there were also a number of small to medium annoyances that have caused me to decide to try something else for the new site.</p>
+
+<p>Here&rsquo;s a quick list:</p>
+
+<h5 id="pros">Pros</h5>
+
+<ol>
+<li><p><strong>No scripting or special tooling is required to work on the site.</strong></p>
+
+<p>Squarespace has very slick WYSIWYG tools on their site, with drag-and-drop content modification that made it easy to adjust the site without writing any code. Additionally, since the tools were online, it was very easy to change the site using any computer.</p></li>
+
+<li><p><strong>Squarespace has beautiful-looking website templates.</strong></p>
+
+<p>I was always impressed by the variety and quality of the templates that were provided on Squarespace. While they lean more towards commercial and artist-centric templates, there were still a few different templates that I thought worked well for coding portfolios.</p></li>
+
+<li><p><strong>Site templates were responsive and mobile-friendly.</strong></p>
+
+<p>In my opinion, the best feature of Squarespace&rsquo;s site designs is the fact that they are all responsive and work perfectly on mobile. Even for a portfolio site, having a solid mobile version is critical.</p></li>
+
+<li><p><strong>Strong community and customer support.</strong></p>
+
+<p>There are quite a few companies that make Squarespace-specific code additions that work on most sites. Additionally, I always had good experiences with their support team.</p></li>
+</ol>
+
+<h5 id="cons">Cons</h5>
+
+<ol>
+<li><p><strong>Squarespace is expensive.</strong></p>
+
+<p>In order to have the ability to add custom code to your site, a Squarespace business subscription is required, which runs $18 per month. For a portfolio site that will be dormant most of the time, this is a significant expense.</p></li>
+
+<li><p><strong>Your content is locked into the service.</strong></p>
+
+<p>Since content is created using Squarespace&rsquo;s custom tools, it is very difficult to migrate content out of a Squarespace page. For the upcoming migration, I am planning on saving the pages as HTML files and rewriting them into another format by hand.</p></li>
+
+<li><p><strong>Significant text and formatting repetition is required on similar pages.</strong></p>
+
+<p>If multiple pages are going to have similar layouts with different content (i.e. project pages), Squarespace doesn&rsquo;t have a great way of handling that. The best workflow I found was to duplicate a project page, then manually update the content. Due to this, I later found some copypasta errors on some of my project pages.</p></li>
+
+<li><p><strong>It is very difficult to add functionality to sites.</strong></p>
+
+<p>If custom navigation or content display functionality is needed, the options in Squarespace are pretty limited. There are a few ways of injecting custom formatting or code in their base plan, but in order to fully customize the site with custom HTML, a more expensive plan is required.</p></li>
+
+<li><p><strong>Squarespace sites are pretty heavyweight.</strong></p>
+
+<p>The beauty of Squarespace&rsquo;s pages has a cost &ndash; they use multiple code frameworks to support the sites and tooling. Additionally, since all of the websites are dynamic, this incurs further loading cost.</p></li>
+</ol>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="new-site-goals">
+<h4 id="new-site-goals">New Site Goals</h4>
+
+<p>From the pros and cons above, I have set a few goals that I would like the new site to meet:</p>
+
+<ol>
+<li><p><strong>Minimize expense.</strong></p>
+
+<p>As recent events have shown me, having a portfolio site ready to go at all times is extremely important. However, since it is likely that this site will be idle a significant portion of the time, I would like to minimize how much the site costs me to run each month.</p></li>
+
+<li><p><strong>Use the DRY principle as much as possible.</strong></p>
+
+<p>In order to minimize typos, copypasta errors, and inconsistent information, I want to minimize amount of text that I need to duplicate between this site and my resume.</p></li>
+
+<li><p><strong>Maintain responsiveness and mobile support.</strong></p>
+
+<p>Even though I&rsquo;m moving away from pre-built sites, I would still like to maintain the responsive design of my previous site if possible. Mobile support is also a must.</p></li>
+
+<li><p><strong>Keep the site minimal and fast.</strong></p>
+
+<p>Since mobile support is desired, site performance is a high priority. In addition to minimizing the code, I would also like to go with a more minimal theme as well.</p></li>
+
+<li><p><strong>Make updating the site as simple as possible.</strong></p>
+
+<p>Using scripts (and possibly some CI tools later on), I would like to automate the process of updating and deploying the site as much as I can.</p></li>
+</ol>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="frameworks-and-tools">
+<h4 id="frameworks-and-tools">Frameworks and Tools</h4>
+
+<p>I have already chosen the frameworks and tools that I am going to be using to create the site. Here&rsquo;s the list so far:</p>
+
+<ol>
+<li><p><strong>GitHub Pages</strong></p>
+
+<p><a href="https://pages.github.com/">GitHub</a> provides <em>free</em> hosting for a single static website per user. Since I&rsquo;m not planning on adding any dynamic functionality to my site, this seems like an ideal arrangement. Additionally, deployment via Git will allow for simpler automation with most CI tools.</p></li>
+
+<li><p><strong>Hugo</strong></p>
+
+<p>For site creation, I am going to try using static websites with <a href="https://gohugo.io/">Hugo</a>. I had a tough time deciding between Jekyll and Hugo, but in the end I have decided to go with Hugo due to their Markdown extensions and shortcodes. Additionally, I have heard many good things about Go, and this will be a good intro to the language.</p></li>
+
+<li><p><strong>Materialize CSS</strong></p>
+
+<p>I&rsquo;m a big fan of Google&rsquo;s Material Design language, so I&rsquo;ve decided to use that as the first theme of the new site. Of the frameworks I looked at, <a href="http://materializecss.com">Materialize CSS</a> seems like the most complete as well as the easiest to use. Additionally, they have a number of components (cards, tabs, accordions) of which I would like to make use in the site.</p></li>
+
+<li><p><strong>Pandoc</strong></p>
+
+<p>In order to minimize the amount of rewriting necessary when updating my resume, I am planning on using <a href="https://pandoc.org/">Pandoc</a> to generate from a single source document all of the resume formats most companies request.</p></li>
+
+<li><p><strong>PowerShell</strong></p>
+
+<p>When I worked on build systems at Robot, I used PowerShell as the primary scripting language. For this website, I see no reason to change. With the new <a href="https://github.com/PowerShell/PowerShell">Powershell Core</a> update, my scripts will even be usable on Linux, which will make using CI tools much easier.</p></li>
+</ol>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="conclusion">
+<h4 id="conclusion">Conclusion</h4>
+
+<p>With these lists, I feel like I have the basis I need to determine whether this new site will meet my needs. Addionally, this list will be helpful when looking back at the new site design when the site is completed. All that&rsquo;s left now is to get my hands dirty and make the new site.</p>
+
+<p>Until next time!</p>
+
+</section></p>
+		</article>
+
+		
+<div id="socialshare">
+    <span class="grey-text text-darken-3">Share this: 
+
+        <a href="" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Email to a friend" onclick="javascript:window.location='mailto:?subject=Interesting post&body=I thought you might find this post interesting: ' + window.location;return false;"><i class="fa fa-lg fa-envelope-o"></i></a>
+        
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fvingenuity.github.io%2fpost%2fsite-rework-2018%2f2018-04-07--01--reasoning-and-goals%2f" target="_blank" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Share on facebook" ><i class="fa fa-lg fa-facebook-square"></i></a>
+        
+        <a href="#" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="tweet about this"><i class="fa fa-lg fa-twitter"></i></a>
+
+        <a href="//www.reddit.com/submit" class="grey-text text-darken-3 social-share-margin tooltipped" data-position="top" data-delay="50" data-tooltip="Share on reddit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"><i class="fa fa-lg fa-reddit"></i></a>
+
+</span>
+</div>
+		<div class="divider"></div>
+
+		<div class="section row">
+			<div class="col s3 left-align">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/post/2018-04-04-starting-over/"><i class="fa fa-angle-left"></i> Last Post</a>
+			</div>
+
+			<div class="col s4 center-align offset-s1">
+				<a class="waves-effect waves-light btn" href="/post/#2018-04-07--01--reasoning-and-goals">All Posts</a>
+			</div>
+
+			<div class="col s3 right-align offset-s1">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/post/site-rework-2018/2018-04-14--02--generating-resumes/">Next Post <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	
+		<div class="col hide-on-small-only m3 l2">
+			<div class="pinned">
+				
+				
+
+
+
+
+
+<div class="table-of-contents">
+	<ul class="toc-hmap[wrapper_class:table-of-contents page:Page(&#34;Site Rework Part 1&#34;)]">
+	
+	
+	
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#old-site-postmortem">Old Site Postmortem</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#new-site-goals">New Site Goals</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#frameworks-and-tools">Frameworks and Tools</a>
+		</li>
+	
+		
+		
+
+		
+		
+		
+		<li >
+			<a href="#conclusion">Conclusion</a>
+		</li>
+	
+
+	</ul>
+</div>
+
+			</div>
+		</div>
+	
+</div>
+
+
+         </div>
+      </main>
+
+      <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+      <script type="text/javascript" src="/js/mermaid.min.js"></script>
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+
+      <script type="text/javascript" src="/js/resume-material.js"></script>
+
+   </body>
+
+   <footer>
+      <div class="footer-copyright center-align">
+         <div class="container">
+			   
+				   
+				
+				
+			   
+				   
+			   
+				
+            <p class="">© 2014-2018 Vincent Kocks</p>
+         </div>
+      </div>
+   </footer>
+
+</html>

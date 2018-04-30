@@ -30,6 +30,24 @@
     </item>
     
     <item>
+      <title>Pandoc</title>
+      <link>https://vingenuity.github.io/tags/pandoc/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vingenuity.github.io/tags/pandoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://vingenuity.github.io/tags/resume/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vingenuity.github.io/tags/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Squarespace</title>
       <link>https://vingenuity.github.io/tags/squarespace/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
@@ -41,9 +59,18 @@
     <item>
       <title>Website</title>
       <link>https://vingenuity.github.io/tags/website/</link>
-      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://vingenuity.github.io/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wkhtmltopdf</title>
+      <link>https://vingenuity.github.io/tags/wkhtmltopdf/</link>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vingenuity.github.io/tags/wkhtmltopdf/</guid>
       <description></description>
     </item>
     

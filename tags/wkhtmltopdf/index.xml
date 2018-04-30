@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Website on Vingenuity</title>
-    <link>https://vingenuity.github.io/tags/website/</link>
-    <description>Recent content in Website on Vingenuity</description>
+    <title>Wkhtmltopdf on Vingenuity</title>
+    <link>https://vingenuity.github.io/tags/wkhtmltopdf/</link>
+    <description>Recent content in Wkhtmltopdf on Vingenuity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vingenuity.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vingenuity.github.io/tags/wkhtmltopdf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,19 +18,6 @@
       
       <guid>https://vingenuity.github.io/post/site-rework-2018/2018-04-14--02--generating-resumes/</guid>
       <description>&lt;p&gt;As mentioned in &lt;a href=&#34;https://vingenuity.github.io/post/site-rework-2018/2018-04-07--01--reasoning-and-goals/&#34;&gt;my previous post&lt;/a&gt;, one of the primary reasons for the site rework was to reduce the amount of repetition and copypasta done across the website. The primary offender with repetition by far in my previous workflow was the resumes. In today&amp;rsquo;s post, I am going to show my new workflow for producing my resumes that heavily reduces this repetition.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Site Rework Part 1</title>
-      <link>https://vingenuity.github.io/post/site-rework-2018/2018-04-07--01--reasoning-and-goals/</link>
-      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://vingenuity.github.io/post/site-rework-2018/2018-04-07--01--reasoning-and-goals/</guid>
-      <description>&lt;p&gt;As mentioned in my previous post, I am going to be spending the next few weeks completely reworking the Vingenuity website.&lt;/p&gt;
-
-&lt;p&gt;In general, when redoing a previous project or tool, it&amp;rsquo;s a good idea to think about what was positive and negative about the original, as well as do a little bit of advance planning. That&amp;rsquo;s what today&amp;rsquo;s post is about.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
