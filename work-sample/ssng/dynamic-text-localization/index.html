@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="generator" content="Hugo 0.37.1" />
+      <title> Vingenuity  - Dynamic Text Localization  </title>
+		
+      <link type="text/css" rel="stylesheet" href="/css/prism.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
+		<script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
+
+      
+      <link type="text/css" rel="stylesheet" href="/css/hugo-materialized.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/resume-material.css"/>
+
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+   </head>
+    
+   <body>
+      <ul id="slide-out" class="sidenav sidenav-fixed blue darken-4">
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+         <li><div class="user-view">
+				<div class="background-frame">
+               <img class="background-image" src="/images/vingenuity-logo.png">
+				</div>
+				<div class="text-frame">
+               <p id="name-text" class=" white-text">Vincent Kocks</p>
+               <p id="description-text" class=" white-text">Game Programmer</p>
+					
+				</div>
+				<div class="social-frame">
+					
+					
+
+
+
+	<a class="social-icon" href="mailto:vincent@vingenuity.net"><i class="hoverable fa fa-envelope  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://github.com/vingenuity"><i class="hoverable fa fa-github  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://www.linkedin.com/in/vingenuity"><i class="hoverable fa fa-linkedin-square  fa-lg  white-text"></i></a>
+
+
+
+	<a class="social-icon" href="skype:vingenuity?chat"><i class="hoverable fa fa-skype  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://vimeo.com/vingenuity"><i class="hoverable fa fa-vimeo  fa-lg  white-text"></i></a>
+
+
+				</div>
+         </div></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+	
+		<li class="">
+			<a href="/">
+				
+				
+					<i class="fa fa-home  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Home</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/project/">
+				
+				
+					<i class="fa fa-wrench  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Projects</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/post/">
+				
+				
+					<i class="fa fa-edit  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Posts</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/resume/">
+				
+				
+					<i class="fa fa-paperclip  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Resume</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/work-sample/">
+				
+				
+					<i class="fa fa-briefcase  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Work Samples</span>
+				
+			</a>
+		</li>
+	
+
+      </ul>
+		
+		<nav class="hide-on-large-only">
+			
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+				<a href="/"><div class="brand-logo center">
+               <img class="left" src="/images/vingenuity-logo.png">
+					Vingenuity
+				</div></a>
+			</div>
+		</nav>
+
+      <main>
+         <div class="container">
+            
+
+
+
+
+
+
+<div class="row">
+	<div class="col s12 m9 l10">
+		<div class="row flex z-depth-1">
+			<div class="col s3 grey lighten-4 valign-wrapper">
+				
+				<img class="responsive-img" src="/images/ssng/logo_large.png">
+			</div>
+			<div class="col s9 blue darken-2">
+				<h3 class="grey-text text-lighten-4">Dynamic Text Localization</h3>
+				
+			</div>
+		</div>
+
+		<article class="post">
+			
+
+<p>
+
+	
+	
+	
+
+
+
+
+
+
+
+<img class="responsive-img materialboxed" src="/images/ssng/dynamic-text-localization.jpg">
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>UDK has a very well-made localization system that can handle localizing text, images, and even video files. However, in order to localize all of these assets, it performs this localization during the initial engine load. Unfortunately, this means that changing the localization in UDK normally requires a game restart.</p>
+
+<p>For our game, we wanted to work around this limitation and allow our users to change the localization on-the-fly using our menus. We accomplished that using this custom static class.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>Our text localizer works on top of UDK&rsquo;s localizer using its parsing functionality. The game keeps its localization language set to International, and inside of the international localization file directory lie the localization files for every language. Thus, on startup, UDK will load localization text for all our supported languages.</p>
+
+<p>Each language&rsquo;s file has a specific name that is registered in the localizer with that language option in the menus. When a text localization is requested, the localizer calls for UDK to find the localization that it would normally, but to look in that specific file.</p>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="localizer">
+<h4 id="localizer">Localizer</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-unrealscript">
+        
+class Text_Localizer extends Object
+    config(Game);
+
+//----------------------------------------------------------------------------------------------------------
+enum Language
+{
+    /* 0*/LANGUAGE_ENG,
+    /* 1*/LANGUAGE_ESM,
+    /* 2*/LANGUAGE_FRA,
+    /* 3*/LANGUAGE_XXX
+};
+
+//----------------------------------------------------------------------------------------------------------
+var config Language GameLanguage;
+
+var string localizationFile_ENG;
+var string localizationFile_ESM;
+var string localizationFile_FRA;
+var string localizationFile_XXX;
+
+
+//----------------------------------------------------------------------------------------------------------
+static function string ConvertLanguageToString( Language Lang )
+{
+    local string LanguageString;
+
+    switch( Lang )
+    {
+    case LANGUAGE_ENG:
+        LanguageString = "English";
+        break;
+    case LANGUAGE_ESM:
+        LanguageString = "Espanol";
+        break;
+    case LANGUAGE_FRA:
+        LanguageString = "Francais";
+        break;
+    case LANGUAGE_XXX:
+        default:
+        LanguageString = "Test Language Xx";
+    }
+
+    return LanguageString;
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function string GetLocalizedStringWithName( string sectionName, string stringName )
+{
+    local string currentFile;
+
+    switch( Default.GameLanguage )
+    {
+    case LANGUAGE_ENG:
+        currentFile = Default.localizationFile_ENG;
+        break;
+    case LANGUAGE_ESM:
+        currentFile = Default.localizationFile_ESM;
+        break;
+    case LANGUAGE_FRA:
+        currentFile = Default.localizationFile_FRA;
+        break;
+    case LANGUAGE_XXX:
+        default:
+        currentFile = Default.localizationFile_XXX;
+    }
+
+    return ParseLocalizedPropertyPath( currentFile $ "." $ sectionName $ "." $ stringName );
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function Language GetCurrentLocalizationLanguage()
+{
+    return Default.GameLanguage;
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function string GetCurrentLocalizationName()
+{
+    return ConvertLanguageToString( GetCurrentLocalizationLanguage() );
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function SetLocalizationLanguage( Language newLanguage )
+{
+    Default.GameLanguage = newLanguage;
+    StaticSaveConfig();
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function array< string > GetSupportedLanguages()
+{
+    local array< string > SupportedLanguages;
+    local int i;
+
+    for( i = 0; i < Language.EnumCount - 1; ++i )
+    {
+        SupportedLanguages.AddItem( ConvertLanguageToString( Language( i ) ) );
+    }
+
+    return SupportedLanguages;
+}
+
+DefaultProperties
+{
+    localizationFile_ENG = "SSG_ENG"
+    localizationFile_ESM = "SSG_ESM"
+    localizationFile_FRA = "SSG_FRA"
+    localizationFile_XXX = "SSG_XXX"
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="example-localization-file">
+<h4 id="example-localization-file">Example Localization File</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-cfg">
+        
+[SSG_Main_Menu]
+
+menuButtonNewGame="New Game"
+menuButtonContinueGame="Continue Game"
+menuButtonOptions="Options"
+menuButtonCredits="Credits"
+menuButtonQuit="Quit"
+
+
+[SSG_Options_Menu]
+
+menuTitleOptions="Options"
+menuButtonOptionsVideo="Video"
+menuButtonOptionsAudio="Audio"
+menuButtonOptionsGameplay="Gameplay"
+menuButtonBackMainMenu="Back"
+
+menuTitleVideoOptions="Video"
+menuLabelVideoSettingResolution="Resolution"
+menuLabelVideoSettingGraphicsLevel="Graphics Quality"
+menuLabelVideoSettingFullscreen="Fullscreen"
+menuLabelVideoSettingGamma="Gamma"
+menuButtonCancel="Cancel"
+menuButtonAccept="Accept"
+menuStepperGraphicsLevel0="Lowest"
+menuStepperGraphicsLevel1="Low"
+menuStepperGraphicsLevel2="Medium"
+menuStepperGraphicsLevel3="High"
+menuStepperGraphicsLevel4="Highest"
+
+menuTitleAudioOptions="Audio Options"
+menuLabelAudioVolumeMusic="Music Volume"
+menuLabelAudioVolumeSound="Sound Volume"
+menuLabelAudioVolumeVoice="Voice Volume"
+
+menuTitleGameOptions="Gameplay Options"
+menuLabelGameLanguage="Language"
+menuLabelGameRumble="Rumble On"
+menuLabelGameGoreLevel="Gore Level"
+menuLabelGameGoreMaximum="Maximum"
+
+    </code>
+</pre>
+
+</section></p>
+
+		</article>
+
+		<div class="divider"></div>
+
+		<div class="section row">
+			<div class="col s3 left-align">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/work-sample/ssng/multiplayer-menus/"><i class="fa fa-angle-left"></i> Last Post</a>
+			</div>
+
+			<div class="col s4 center-align offset-s1">
+				<a class="waves-effect waves-light btn" href="/post/#dynamic-text-localization">All Posts</a>
+			</div>
+
+			<div class="col s3 right-align offset-s1">
+				<a class="waves-effect waves-light btn disabled" href="">Next Post <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	
+		<div class="col hide-on-small-only m3 l2">
+			<div class="pinned">
+				
+				
+
+
+
+
+
+<div class="table-of-contents">
+	<ul class="toc-hmap[page:Page(&#34;Dynamic Text Localization&#34;) wrapper_class:table-of-contents]">
+	
+	
+	
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#motivation">Motivation</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#design">Design</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#localizer">Localizer</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#example-localization-file">Example Localization File</a>
+			</li>
+		
+	
+
+	</ul>
+</div>
+
+			</div>
+		</div>
+	
+</div>
+
+
+         </div>
+      </main>
+
+      <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+      <script type="text/javascript" src="/js/mermaid.min.js"></script>
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+
+      <script type="text/javascript" src="/js/resume-material.js"></script>
+
+   </body>
+
+   <footer>
+      <div class="footer-copyright center-align">
+         <div class="container">
+			   
+				   
+				
+				
+			   
+				   
+			   
+				
+            <p class="">© 2014-2018 Vincent Kocks</p>
+         </div>
+      </div>
+   </footer>
+
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="generator" content="Hugo 0.37.1" />
+      <title> Vingenuity  - Player Physics  </title>
+		
+      <link type="text/css" rel="stylesheet" href="/css/prism.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
+		<script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
+
+      
+      <link type="text/css" rel="stylesheet" href="/css/hugo-materialized.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/resume-material.css"/>
+
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+   </head>
+    
+   <body>
+      <ul id="slide-out" class="sidenav sidenav-fixed blue darken-4">
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+         <li><div class="user-view">
+				<div class="background-frame">
+               <img class="background-image" src="/images/vingenuity-logo.png">
+				</div>
+				<div class="text-frame">
+               <p id="name-text" class=" white-text">Vincent Kocks</p>
+               <p id="description-text" class=" white-text">Game Programmer</p>
+					
+				</div>
+				<div class="social-frame">
+					
+					
+
+
+
+	<a class="social-icon" href="mailto:vincent@vingenuity.net"><i class="hoverable fa fa-envelope  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://github.com/vingenuity"><i class="hoverable fa fa-github  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://www.linkedin.com/in/vingenuity"><i class="hoverable fa fa-linkedin-square  fa-lg  white-text"></i></a>
+
+
+
+	<a class="social-icon" href="skype:vingenuity?chat"><i class="hoverable fa fa-skype  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://vimeo.com/vingenuity"><i class="hoverable fa fa-vimeo  fa-lg  white-text"></i></a>
+
+
+				</div>
+         </div></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+	
+		<li class="">
+			<a href="/">
+				
+				
+					<i class="fa fa-home  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Home</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/project/">
+				
+				
+					<i class="fa fa-wrench  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Projects</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/post/">
+				
+				
+					<i class="fa fa-edit  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Posts</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/resume/">
+				
+				
+					<i class="fa fa-paperclip  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Resume</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/work-sample/">
+				
+				
+					<i class="fa fa-briefcase  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Work Samples</span>
+				
+			</a>
+		</li>
+	
+
+      </ul>
+		
+		<nav class="hide-on-large-only">
+			
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+				<a href="/"><div class="brand-logo center">
+               <img class="left" src="/images/vingenuity-logo.png">
+					Vingenuity
+				</div></a>
+			</div>
+		</nav>
+
+      <main>
+         <div class="container">
+            
+
+
+
+
+
+
+<div class="row">
+	<div class="col s12 m9 l10">
+		<div class="row flex z-depth-1">
+			<div class="col s3 grey lighten-4 valign-wrapper">
+				
+				<img class="responsive-img" src="/images/cadbury/logo_large.png">
+			</div>
+			<div class="col s9 blue darken-2">
+				<h3 class="grey-text text-lighten-4">Player Physics</h3>
+				
+			</div>
+		</div>
+
+		<article class="post">
+			
+
+<p><div class="video-container">
+  <iframe src="//player.vimeo.com/video/119056652" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>From the outset, we wanted our game to be a platformer focused on speed and agility. Thus, our player character has the ability to run, jump, wall jump, and wall slide. My primary focus during development was on making all of the physics for these actions &ldquo;feel right.&rdquo;</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>GuildEd had a solid integration setup for its physics, but its collision system had some small issues. In particular, the detection for the &lsquo;on ground&rsquo; state was glitchy, and there was no detection for whether the player was touching a wall or not.</p>
+
+<p>Fortunately, GuildEd did provide a very useful raytracing function, which I used for my solution. I created a pair of raytracing &lsquo;sensors&rsquo; on the bottom and both sides of the character. As you can see in the video, they are designed to be very tight to the collision box and shoot in both directions. If either one of the raycasts impacts the environment for that side of the character, it sets the &lsquo;on ground&rsquo; or &lsquo;on wall&rsquo; state. This setup worked well enough to make it into the final game build.</p>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="wall-sliding-detection">
+<h4 id="wall-sliding-detection">Wall Sliding Detection</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-lua">
+        
+--Wall-Sliding
+local westSideRay = nil
+local eastSideRay = nil
+local slightlyWestOfObject   = 0
+local slightlyEastOfObject   = 0
+local verticalColliderStart  = 0
+local verticalColliderLength = 0
+timeDirectionHeldWhileSliding = 0
+directionHeldWhileSliding = false
+
+function isNextToWall()
+    slightlyInsideWest  = rigidBody:posX() - ( 0.498 * iconWidthInWorldUnits() )
+    slightlyOutsideWest = rigidBody:posX() - ( 0.508 * iconWidthInWorldUnits() )
+
+    slightlyInsideEast  = rigidBody:posX() + ( 0.498 * iconWidthInWorldUnits() )
+    slightlyOutsideEast = rigidBody:posX() + ( 0.508 * iconWidthInWorldUnits() )
+
+    colliderUpperPoint  = rigidBody:posY() - ( 0.49 * iconHeightInWorldUnits() )
+    colliderLowerPoint  = rigidBody:posY() + ( 0.49 * iconHeightInWorldUnits() )
+
+    westSideDownRay = RayB.new( slightlyInsideWest, colliderUpperPoint, slightlyOutsideWest, colliderLowerPoint )
+    westSideUpRay   = RayB.new( slightlyInsideWest, colliderLowerPoint, slightlyOutsideWest, colliderUpperPoint )
+    eastSideDownRay = RayB.new( slightlyInsideEast, colliderUpperPoint, slightlyOutsideEast, colliderLowerPoint )
+    eastSideUpRay   = RayB.new( slightlyInsideEast, colliderLowerPoint, slightlyOutsideEast, colliderUpperPoint )
+
+    if ( westSideDownRay:IsCollidingWithWorld() or westSideUpRay:IsCollidingWithWorld() or eastSideDownRay:IsCollidingWithWorld() or eastSideUpRay:IsCollidingWithWorld() ) then
+        return true
+    end
+
+    return false
+end
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="grounding-detection">
+<h4 id="grounding-detection">Grounding Detection</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-lua">
+        
+
+function isOnGround()
+
+    slightlyInsideBottom  = rigidBody:posY() + ( 0.496 * iconHeightInWorldUnits() )
+    slightlyOutsideBottom = rigidBody:posY() + ( 0.506 * iconHeightInWorldUnits() )
+
+    colliderWestPoint   = rigidBody:posX() - ( 0.49 * iconWidthInWorldUnits() )
+    colliderEastPoint   = rigidBody:posX() + ( 0.49 * iconWidthInWorldUnits() )
+
+    footWestRay = RayB.new( colliderEastPoint, slightlyInsideBottom, colliderWestPoint, slightlyOutsideBottom )
+    footEastRay = RayB.new( colliderWestPoint, slightlyInsideBottom, colliderEastPoint, slightlyOutsideBottom )
+
+    if ( footEastRay:IsCollidingWithWorld() or footWestRay:IsCollidingWithWorld() ) then
+        return true
+    end
+
+    return false
+end
+
+    </code>
+</pre>
+
+</section></p>
+
+		</article>
+
+		<div class="divider"></div>
+
+		<div class="section row">
+			<div class="col s3 left-align">
+				<a class="waves-effect waves-light btn disabled" href=""><i class="fa fa-angle-left"></i> Last Post</a>
+			</div>
+
+			<div class="col s4 center-align offset-s1">
+				<a class="waves-effect waves-light btn" href="/post/#player-physics">All Posts</a>
+			</div>
+
+			<div class="col s3 right-align offset-s1">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/work-sample/cadbury/in-game-hud/">Next Post <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	
+		<div class="col hide-on-small-only m3 l2">
+			<div class="pinned">
+				
+				
+
+
+
+
+
+<div class="table-of-contents">
+	<ul class="toc-hmap[page:Page(&#34;Player Physics&#34;) wrapper_class:table-of-contents]">
+	
+	
+	
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#motivation">Motivation</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#design">Design</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#wall-sliding-detection">Wall Sliding Detection</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#grounding-detection">Grounding Detection</a>
+			</li>
+		
+	
+
+	</ul>
+</div>
+
+			</div>
+		</div>
+	
+</div>
+
+
+         </div>
+      </main>
+
+      <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+      <script type="text/javascript" src="/js/mermaid.min.js"></script>
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+
+      <script type="text/javascript" src="/js/resume-material.js"></script>
+
+   </body>
+
+   <footer>
+      <div class="footer-copyright center-align">
+         <div class="container">
+			   
+				   
+				
+				
+			   
+				   
+			   
+				
+            <p class="">© 2014-2018 Vincent Kocks</p>
+         </div>
+      </div>
+   </footer>
+
+</html>

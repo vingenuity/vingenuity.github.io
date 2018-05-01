@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="generator" content="Hugo 0.37.1" />
+      <title> Vingenuity  - Opening Cutscene  </title>
+		
+      <link type="text/css" rel="stylesheet" href="/css/prism.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
+		<script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
+
+      
+      <link type="text/css" rel="stylesheet" href="/css/hugo-materialized.css"/>
+      <link type="text/css" rel="stylesheet" href="/css/resume-material.css"/>
+
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+   </head>
+    
+   <body>
+      <ul id="slide-out" class="sidenav sidenav-fixed blue darken-4">
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+         <li><div class="user-view">
+				<div class="background-frame">
+               <img class="background-image" src="/images/vingenuity-logo.png">
+				</div>
+				<div class="text-frame">
+               <p id="name-text" class=" white-text">Vincent Kocks</p>
+               <p id="description-text" class=" white-text">Game Programmer</p>
+					
+				</div>
+				<div class="social-frame">
+					
+					
+
+
+
+	<a class="social-icon" href="mailto:vincent@vingenuity.net"><i class="hoverable fa fa-envelope  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://github.com/vingenuity"><i class="hoverable fa fa-github  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://www.linkedin.com/in/vingenuity"><i class="hoverable fa fa-linkedin-square  fa-lg  white-text"></i></a>
+
+
+
+	<a class="social-icon" href="skype:vingenuity?chat"><i class="hoverable fa fa-skype  fa-lg  white-text"></i></a>
+
+
+
+
+
+	<a class="social-icon" href="https://vimeo.com/vingenuity"><i class="hoverable fa fa-vimeo  fa-lg  white-text"></i></a>
+
+
+				</div>
+         </div></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+	
+		<li class="">
+			<a href="/">
+				
+				
+					<i class="fa fa-home  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Home</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/project/">
+				
+				
+					<i class="fa fa-wrench  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Projects</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/post/">
+				
+				
+					<i class="fa fa-edit  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Posts</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/resume/">
+				
+				
+					<i class="fa fa-paperclip  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Resume</span>
+				
+			</a>
+		</li>
+	
+
+	
+		<li class="">
+			<a href="/work-sample/">
+				
+				
+					<i class="fa fa-briefcase  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Work Samples</span>
+				
+			</a>
+		</li>
+	
+
+      </ul>
+		
+		<nav class="hide-on-large-only">
+			
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+				<a href="/"><div class="brand-logo center">
+               <img class="left" src="/images/vingenuity-logo.png">
+					Vingenuity
+				</div></a>
+			</div>
+		</nav>
+
+      <main>
+         <div class="container">
+            
+
+
+
+
+
+
+<div class="row">
+	<div class="col s12 m9 l10">
+		<div class="row flex z-depth-1">
+			<div class="col s3 grey lighten-4 valign-wrapper">
+				
+				<img class="responsive-img" src="/images/ssng/logo_large.png">
+			</div>
+			<div class="col s9 blue darken-2">
+				<h3 class="grey-text text-lighten-4">Opening Cutscene</h3>
+				
+			</div>
+		</div>
+
+		<article class="post">
+			
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>For playing cutscenes, UDK requires using the Bink format and its native player. However, as students with no native code access, UDK&rsquo;s Bink player has a major downside: the only play function is an exec command called MOVIETEST.</p>
+
+<p>The MOVIETEST function loads the movie and then stops the engine completely to play it. This means that the cutscenes are unskippable (input has been stopped) and can&rsquo;t have subtitles (the message system is also stopped.) Our team believed that lacking those two features in our cutscene would make for a bad player experience, so we made a custom cutscene player in flash to fix this problem.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>Our flash file template for cutscenes is devised of four layers:</p>
+
+<ul>
+<li>An object that watches for button presses and fires an event to Unreal on any button press to end the cutscene.</li>
+<li>A text container that is used to display subtitle data on top of the cutscene.</li>
+<li>The cutscene itself, hand-animated by our amazing artists.</li>
+<li>An event layer, where we manually timed when to fire subtitles.</li>
+</ul>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="cutscene-skip">
+<h4 id="cutscene-skip">Cutscene Skip</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+//timer to prevent the cutscene from being skipped for the first two seconds (also hides the frame)
+const ONE_SECOND_IN_MS = 1000;
+var skip_allowed_timer:Timer = new Timer( ONE_SECOND_IN_MS, 2 );
+skip_allowed_timer.addEventListener( TimerEvent.TIMER_COMPLETE, AllowSkipping );
+
+var fade_in_skip_tween:Tween;
+
+function AllowSkipping( timer_event:TimerEvent )
+{
+    // fade in our skip prompt so that we're not distracting, and attach the event listener so they can skip
+    fade_in_skip_tween = new Tween( mc_skip_clip, "alpha", Regular.easeOut, 0.0, 1.0, FADE_LENGTH_SECONDS, true );
+    fade_in_skip_tween.start();
+    InputDelegate.getInstance().addEventListener(InputEvent.INPUT, HandleSkipInput );
+}
+
+function HandleSkipInput( input_event:InputEvent )
+{
+    if( input_event.details.value != InputValue.KEY_UP )
+        return;
+
+    switch( input_event.details.navEquivalent )
+    {
+    case NavigationCode.GAMEPAD_A:
+    case NavigationCode.GAMEPAD_START:
+        InputDelegate.getInstance().removeEventListener(InputEvent.INPUT, HandleSkipInput );
+        ExternalInterface.call( "EndCutscene" );
+        break;
+    default:
+        return;
+    }
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="subtitle-display">
+<h4 id="subtitle-display">Subtitle Display</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+const FADE_LENGTH_SECONDS = 0.3;
+const ONE_SECOND_IN_MILLIS = 1000;
+
+var fade_in_tween:Tween;
+var fade_out_tween:Tween;
+
+var subtitle_timer:Timer = new Timer( ONE_SECOND_IN_MILLIS, 1 );
+subtitle_timer.addEventListener( TimerEvent.TIMER_COMPLETE, HideSubtitle );
+
+var subtitle_seconds_shown:Number = 1.0;
+
+function ShowSubtitle()
+{
+    //mc_subtitle.text_subtitle.text = subtitle_text;
+    fade_in_tween = new Tween( mc_subtitle, "alpha", Regular.easeOut, 0.0, 1.0, FADE_LENGTH_SECONDS, true );
+    subtitle_timer.start();
+}
+
+function HideSubtitle( timer_event:TimerEvent )
+{
+    fade_out_tween = new Tween( mc_subtitle, "alpha", Regular.easeOut, 1.0, 0.0, FADE_LENGTH_SECONDS, true );
+    //fade_out_tween.addEventListener( TweenEvent.MOTION_FINISH, ClearSubtitle );
+}
+
+function ClearSubtitle()
+{
+    mc_subtitle.text_subtitle.text = "";
+}
+
+function PlayMessage( message_number:uint, message_length:Number )
+{
+    ExternalInterface.call( "PlayCutsceneMessage", message_number );
+    if( Extensions.isGFxPlayer )
+    {
+        mc_subtitle.Show( "Subtitle will show here.", message_length );
+    }
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="unrealscript-backend">
+<h4 id="unrealscript-backend">Unrealscript Backend</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-unrealscript">
+        
+class SSG_Cutscene_Opening extends GfxMoviePlayer;
+
+var class<SSG_Message_Cutscene_Opening> MessageClass;
+var string NextLevelName;
+var SSG_Cutscene_Subtitle_Object Subtitle;
+var string LocalizationSection;
+
+
+//++++++++++++++++++++++++++++++++++++++++++ Lifecycle Functions +++++++++++++++++++++++++++++++++++++++++//
+//----------------------------------------------------------------------------------------------------------
+function bool Start( optional bool StartPaused = false )
+{
+    super.Start();
+
+    SetViewScaleMode(SM_ExactFit);
+    SetAlignment(Align_TopLeft);
+    
+    return true;
+}
+
+//----------------------------------------------------------------------------------------------------------
+function Init( optional LocalPlayer playerController )
+{
+    Start();
+    Advance(0.f);
+
+    SetViewScaleMode(SM_ExactFit);
+    SetAlignment(Align_TopLeft);
+
+    Subtitle = SSG_Cutscene_Subtitle_Object( GetVariableObject( "_root.mc_subtitle", class'SSG_Cutscene_Subtitle_Object' ) );
+}
+
+//----------------------------------------------------------------------------------------------------------
+function LocalizeSkipFrame()
+{
+    local GFxObject SkipFrameText;
+    local string SkipFrameTextString;
+
+    SkipFrameText = GetVariableObject("_root.mc_skip_clip.text_press");
+    SkipFrameTextString = class'Text_Localizer'.static.GetLocalizedStringWithName(LocalizationSection, "cutsceneClipPress");
+    SkipFrameText.SetText(SkipFrameTextString);
+
+    SkipFrameText = GetVariableObject("_root.mc_skip_clip.text_to_skip");
+    SkipFrameTextString = class'Text_Localizer'.static.GetLocalizedStringWithName(LocalizationSection, "cutsceneClipToSkip");
+    SkipFrameText.SetText(SkipFrameTextString);
+}
+
+//----------------------------------------------------------------------------------------------------------
+function PlayCutsceneMessage( int MessageNumber )
+{
+    SSG_PlayerController( GetPC() ).Announcer.PlayAnnouncement( MessageClass, MessageNumber );
+    Subtitle = SSG_Cutscene_Subtitle_Object( GetVariableObject( "_root.mc_subtitle", class'SSG_Cutscene_Subtitle_Object' ) );
+    Subtitle.Show( MessageClass.static.GetString( MessageNumber ), MessageClass.static.GetSubtitleLengthSeconds( MessageNumber ) );
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+function EndCutscene()
+{
+    SetPause( true );
+    ConsoleCommand( "open " $ NextLevelName );
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------
+DefaultProperties
+{
+    MovieInfo=SwfMovie'SSG_Opening_Cutscene.SSG_Opening_Cutscene'
+    TimingMode=TM_Real
+    Priority=10
+
+    bBlurLesserMovies=true
+
+    bDisplayWithHudOff=true
+    bPauseGameWhileActive=false
+
+    bAllowFocus=true
+    bAllowInput=true
+    bCaptureInput=true
+    bCaptureMouseInput=true
+
+    LocalizationSection="SSG_Cutscene"
+    MessageClass=class'SSG_Message_Cutscene_Opening'
+    NextLevelName="SGS-MapMenu.udk";
+
+    //SoundThemes(0)=( ThemeName=MenuSounds, Theme=UISoundTheme'SSG_FlashAssets.Sound.SSG_SoundTheme' )
+}
+
+    </code>
+</pre>
+
+</section></p>
+
+		</article>
+
+		<div class="divider"></div>
+
+		<div class="section row">
+			<div class="col s3 left-align">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/work-sample/akhet/dynamic-text-localizer/"><i class="fa fa-angle-left"></i> Last Post</a>
+			</div>
+
+			<div class="col s4 center-align offset-s1">
+				<a class="waves-effect waves-light btn" href="/post/#opening-cutscene">All Posts</a>
+			</div>
+
+			<div class="col s3 right-align offset-s1">
+				<a class="waves-effect waves-light btn " href="https://vingenuity.github.io/work-sample/ssng/multiplayer-menus/">Next Post <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	
+		<div class="col hide-on-small-only m3 l2">
+			<div class="pinned">
+				
+				
+
+
+
+
+
+<div class="table-of-contents">
+	<ul class="toc-hmap[page:Page(&#34;Opening Cutscene&#34;) wrapper_class:table-of-contents]">
+	
+	
+	
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#motivation">Motivation</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#design">Design</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#cutscene-skip">Cutscene Skip</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#subtitle-display">Subtitle Display</a>
+			</li>
+		
+	
+		
+		
+		
+			
+			
+			
+			<li >
+				<a href="#unrealscript-backend">Unrealscript Backend</a>
+			</li>
+		
+	
+
+	</ul>
+</div>
+
+			</div>
+		</div>
+	
+</div>
+
+
+         </div>
+      </main>
+
+      <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+      <script type="text/javascript" src="/js/mermaid.min.js"></script>
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+
+      <script type="text/javascript" src="/js/resume-material.js"></script>
+
+   </body>
+
+   <footer>
+      <div class="footer-copyright center-align">
+         <div class="container">
+			   
+				   
+				
+				
+			   
+				   
+			   
+				
+            <p class="">© 2014-2018 Vincent Kocks</p>
+         </div>
+      </div>
+   </footer>
+
+</html>

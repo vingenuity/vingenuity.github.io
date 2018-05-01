@@ -145,6 +145,19 @@
 		</li>
 	
 
+	
+		<li class="">
+			<a href="/work-sample/">
+				
+				
+					<i class="fa fa-briefcase  white-text  fa-2x"></i>
+				
+				<span class=" white-text">Work Samples</span>
+				
+			</a>
+		</li>
+	
+
       </ul>
 		
 		<nav class="hide-on-large-only">
@@ -243,36 +256,39 @@
 							
 						
 					<li><span class="stat-header">Developers: </span>15
+
 					
-					<ul class="browser-default">
-                  
-							
-							   
-							   
-						<li>4 Artists
-							
+						
+						<ul class="browser-default">
 						
 							
-							   
-							   
-						<li>7 Designers
+									
+									
+									<li>4 Artists
+								
+							
+							
+									
+									
+									<li>7 Designers
+								
+							
+							
+									
+									
+									<li>1 Producer
+								
+							
+							
+									
+									
+									<li>3 Programmers
+								
+							
+							
 							
 						
-							
-							   
-							   
-						<li>1 Producer
-							
-						
-							
-							   
-							   
-						<li>3 Programmers
-							
-						
-							
-						
-			      </ul>
+						</ul>
 					
 				</ul>
 			</ul>
@@ -334,13 +350,1061 @@
 				</ul>
 			
 		</div>
+
+		<div id="work-samples">
+			
+			
+			
+				<ul class="collapsible">
+				
+					<li>
+						<div class="collapsible-header" id="work-sample-header">
+							<i class="fa fa-chevron-down collapsible-indicator"></i>
+							Dynamic Text Localization
+							<span class="right">
+								
+								
+							</span>
+						</div>
+						<div class="collapsible-body">
+							
+
+<p>
+
+	
+	
+	
+
+
+
+
+
+
+
+<img class="responsive-img materialboxed" src="/images/ssng/dynamic-text-localization.jpg">
+
+
+	
+	
+
+
+
+
+	
+	
+	
 		
-      <div id="work-samples">
-		   
-			   <p>No work samples are currently available for this project.</p>
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>UDK has a very well-made localization system that can handle localizing text, images, and even video files. However, in order to localize all of these assets, it performs this localization during the initial engine load. Unfortunately, this means that changing the localization in UDK normally requires a game restart.</p>
+
+<p>For our game, we wanted to work around this limitation and allow our users to change the localization on-the-fly using our menus. We accomplished that using this custom static class.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>Our text localizer works on top of UDK&rsquo;s localizer using its parsing functionality. The game keeps its localization language set to International, and inside of the international localization file directory lie the localization files for every language. Thus, on startup, UDK will load localization text for all our supported languages.</p>
+
+<p>Each language&rsquo;s file has a specific name that is registered in the localizer with that language option in the menus. When a text localization is requested, the localizer calls for UDK to find the localization that it would normally, but to look in that specific file.</p>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="localizer">
+<h4 id="localizer">Localizer</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-unrealscript">
+        
+class Text_Localizer extends Object
+    config(Game);
+
+//----------------------------------------------------------------------------------------------------------
+enum Language
+{
+    /* 0*/LANGUAGE_ENG,
+    /* 1*/LANGUAGE_ESM,
+    /* 2*/LANGUAGE_FRA,
+    /* 3*/LANGUAGE_XXX
+};
+
+//----------------------------------------------------------------------------------------------------------
+var config Language GameLanguage;
+
+var string localizationFile_ENG;
+var string localizationFile_ESM;
+var string localizationFile_FRA;
+var string localizationFile_XXX;
+
+
+//----------------------------------------------------------------------------------------------------------
+static function string ConvertLanguageToString( Language Lang )
+{
+    local string LanguageString;
+
+    switch( Lang )
+    {
+    case LANGUAGE_ENG:
+        LanguageString = "English";
+        break;
+    case LANGUAGE_ESM:
+        LanguageString = "Espanol";
+        break;
+    case LANGUAGE_FRA:
+        LanguageString = "Francais";
+        break;
+    case LANGUAGE_XXX:
+        default:
+        LanguageString = "Test Language Xx";
+    }
+
+    return LanguageString;
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function string GetLocalizedStringWithName( string sectionName, string stringName )
+{
+    local string currentFile;
+
+    switch( Default.GameLanguage )
+    {
+    case LANGUAGE_ENG:
+        currentFile = Default.localizationFile_ENG;
+        break;
+    case LANGUAGE_ESM:
+        currentFile = Default.localizationFile_ESM;
+        break;
+    case LANGUAGE_FRA:
+        currentFile = Default.localizationFile_FRA;
+        break;
+    case LANGUAGE_XXX:
+        default:
+        currentFile = Default.localizationFile_XXX;
+    }
+
+    return ParseLocalizedPropertyPath( currentFile $ "." $ sectionName $ "." $ stringName );
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function Language GetCurrentLocalizationLanguage()
+{
+    return Default.GameLanguage;
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function string GetCurrentLocalizationName()
+{
+    return ConvertLanguageToString( GetCurrentLocalizationLanguage() );
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function SetLocalizationLanguage( Language newLanguage )
+{
+    Default.GameLanguage = newLanguage;
+    StaticSaveConfig();
+}
+
+//----------------------------------------------------------------------------------------------------------
+static function array< string > GetSupportedLanguages()
+{
+    local array< string > SupportedLanguages;
+    local int i;
+
+    for( i = 0; i < Language.EnumCount - 1; ++i )
+    {
+        SupportedLanguages.AddItem( ConvertLanguageToString( Language( i ) ) );
+    }
+
+    return SupportedLanguages;
+}
+
+DefaultProperties
+{
+    localizationFile_ENG = "SSG_ENG"
+    localizationFile_ESM = "SSG_ESM"
+    localizationFile_FRA = "SSG_FRA"
+    localizationFile_XXX = "SSG_XXX"
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="example-localization-file">
+<h4 id="example-localization-file">Example Localization File</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-cfg">
+        
+[SSG_Main_Menu]
+
+menuButtonNewGame="New Game"
+menuButtonContinueGame="Continue Game"
+menuButtonOptions="Options"
+menuButtonCredits="Credits"
+menuButtonQuit="Quit"
+
+
+[SSG_Options_Menu]
+
+menuTitleOptions="Options"
+menuButtonOptionsVideo="Video"
+menuButtonOptionsAudio="Audio"
+menuButtonOptionsGameplay="Gameplay"
+menuButtonBackMainMenu="Back"
+
+menuTitleVideoOptions="Video"
+menuLabelVideoSettingResolution="Resolution"
+menuLabelVideoSettingGraphicsLevel="Graphics Quality"
+menuLabelVideoSettingFullscreen="Fullscreen"
+menuLabelVideoSettingGamma="Gamma"
+menuButtonCancel="Cancel"
+menuButtonAccept="Accept"
+menuStepperGraphicsLevel0="Lowest"
+menuStepperGraphicsLevel1="Low"
+menuStepperGraphicsLevel2="Medium"
+menuStepperGraphicsLevel3="High"
+menuStepperGraphicsLevel4="Highest"
+
+menuTitleAudioOptions="Audio Options"
+menuLabelAudioVolumeMusic="Music Volume"
+menuLabelAudioVolumeSound="Sound Volume"
+menuLabelAudioVolumeVoice="Voice Volume"
+
+menuTitleGameOptions="Gameplay Options"
+menuLabelGameLanguage="Language"
+menuLabelGameRumble="Rumble On"
+menuLabelGameGoreLevel="Gore Level"
+menuLabelGameGoreMaximum="Maximum"
+
+    </code>
+</pre>
+
+</section></p>
+
+						</div>
+					</li>
+				
+					<li>
+						<div class="collapsible-header" id="work-sample-header">
+							<i class="fa fa-chevron-down collapsible-indicator"></i>
+							Multiplayer Menus
+							<span class="right">
+								
+								
+							</span>
+						</div>
+						<div class="collapsible-body">
+							
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>From the moment our team decided to create a local multiplayer game, we knew we would have to work around the limits of the basic Flash input system, which only supports a single controller.</p>
+
+<p>Thankfully, we discovered that Scaleform had an extension called the FocusManager that handled the difficult parts for us. Our final implementation uses this extension extensively for the four-player input.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>In general, our multiplayer menus start up by using the stage actions to set up the FocusManager masks for the controllers and the objects on stage.</p>
+
+<p>From then on, each masked object can act as if it were a normal Scaleform object dealing with a single player input.</p>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="menu-startup">
+<h4 id="menu-startup">Menu Startup</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+//Set Controllers to focus groups
+FocusManager.setControllerFocusGroup(0, 0); 
+FocusManager.setControllerFocusGroup(1, 1);
+FocusManager.setControllerFocusGroup(2, 2);
+FocusManager.setControllerFocusGroup(3, 3);
+
+//mask each selection area movieclip to only one group
+FocusManager.setFocusGroupMask( mc_player_1_selection, 0x1 );
+FocusManager.setFocusGroupMask( mc_player_2_selection, 0x2 );
+FocusManager.setFocusGroupMask( mc_player_3_selection, 0x4 );
+FocusManager.setFocusGroupMask( mc_player_4_selection, 0x8 );
+
+//set the movieclips to not jump to each other when selection is moved past the end
+FocusManager.setModalClip( mc_player_1_selection, 0 );
+FocusManager.setModalClip( mc_player_2_selection, 1 );
+FocusManager.setModalClip( mc_player_3_selection, 2 );
+FocusManager.setModalClip( mc_player_4_selection, 3 );
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="individual-selection-menu">
+<h4 id="individual-selection-menu">Individual Selection Menu</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+    public class ThiefSelectionArea extends MovieClip
+    {
+        public var text_player_title:TextField;
+        public var mc_frame_press_start:MovieClip;
+        public var mc_frame_name_entry:MovieClip;
+        public var mc_frame_ready:MovieClip;
+        public var mc_card_background:MovieClip;
+        public var mc_invisible:MovieClip;
+        
+        public var controller_id:uint;
+        private var current_frame:uint;
+        private static const FRAME_None = 0;
+        private static const FRAME_PressA = 1;
+        private static const FRAME_NameEntry = 2;
+        private static const FRAME_Ready = 3;
+        
+        public var background_color:ColorTransform;
+        
+        private static const TRANSITION_IN_SECONDS:Number = 0.3;
+        private static const TRANSITION_OUT_SECONDS:Number = 0.3;
+        private var transition_in_alpha:Tween;
+        private var transition_out_alpha:Tween;
+        
+        
+        // Constructor
+        public function ThiefSelectionArea()
+        {
+            controller_id = 0;
+            
+            mc_frame_press_start.alpha = 0.0;
+            mc_frame_name_entry.alpha = 0.0;
+            mc_frame_ready.alpha = 0.0;
+            
+            background_color = new ColorTransform();
+            background_color.color = 0xFFFFFF;
+        }
+        
+        
+        
+        // ++++++++++++++++++++++++++++++++++++++++++ Setters +++++++++++++++++++++++++++++++++++++++++++++//
+        //---------------------------------------------------------------------------------------------------
+        public function DisableButtonInput()
+        {
+            //Remove all previous event watchers
+            InputDelegate.getInstance().removeEventListener( InputEvent.INPUT, HandlePressAButtonPresses );
+            InputDelegate.getInstance().removeEventListener( InputEvent.INPUT, HandleReadyButtonPresses );
+            mc_frame_name_entry.removeEventListener( NameEntryEvent.ENTRY_ACCEPTED, HandleNameEntryEvent );
+            mc_frame_name_entry.removeEventListener( NameEntryEvent.ENTRY_REJECTED, HandleNameEntryEvent );
+            
+            //Don't let them select by giving them no focus
+            FocusManager.setModalClip( mc_invisible, controller_id );
+            FocusManager.setFocus( mc_invisible, controller_id );
+        }
+
+        //---------------------------------------------------------------------------------------------------
+        private function EnableButtonInput( tween_event:TweenEvent )
+        {
+            switch( current_frame )
+            {
+            case FRAME_PressA:
+                InputDelegate.getInstance().addEventListener( InputEvent.INPUT, HandlePressAButtonPresses );
+                FocusManager.setModalClip( mc_frame_press_start, controller_id );
+                FocusManager.setFocus( mc_frame_press_start, controller_id );
+                break;
+            case FRAME_NameEntry:
+                mc_frame_name_entry.text_input_name.text = "";
+                mc_frame_name_entry.addEventListener( NameEntryEvent.ENTRY_ACCEPTED, HandleNameEntryEvent );
+                mc_frame_name_entry.addEventListener( NameEntryEvent.ENTRY_REJECTED, HandleNameEntryEvent );
+                FocusManager.setModalClip( mc_frame_name_entry, controller_id );
+                FocusManager.setFocus( mc_frame_name_entry.mc_keyboard.mc_a_button, controller_id );
+                break;
+            case FRAME_Ready:
+                mc_frame_ready.mc_swords.gotoAndPlay( 0 );
+                InputDelegate.getInstance().addEventListener( InputEvent.INPUT, HandleReadyButtonPresses );
+                FocusManager.setModalClip( mc_frame_ready, controller_id );
+                FocusManager.setFocus( mc_frame_ready, controller_id );
+                break;
+            case FRAME_None:
+            default:
+                return;
+            }
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        public function SetBackgroundColor( red:uint = 255, green:uint = 255, blue:uint = 255 )
+        {
+            background_color.redOffset = red;
+            background_color.greenOffset = green;
+            background_color.blueOffset = blue;
+            
+            mc_card_background.transform.colorTransform = background_color;
+        }
+        
+        
+        // +++++++++++++++++++++++++++++++++++++++ Event Handling +++++++++++++++++++++++++++++++++++++++++//
+        //---------------------------------------------------------------------------------------------------
+        private function HandleNameEntryEvent( name_entry_event:NameEntryEvent )
+        {
+            trace( "Received Event" );
+            switch( name_entry_event.type )
+            {
+            case NameEntryEvent.ENTRY_ACCEPTED:
+                {
+                    if( controller_id == 0 )
+                        ExternalInterface.call( "AddNewThiefPlayer1" );
+                    else if( controller_id == 1 )
+                        ExternalInterface.call( "AddNewThiefPlayer2" );
+                    else if( controller_id == 2 )
+                        ExternalInterface.call( "AddNewThiefPlayer3" );
+                    else if( controller_id == 3 )
+                        ExternalInterface.call( "AddNewThiefPlayer4" );
+                    
+                    TransitionToPlayerReady( mc_frame_name_entry.text_input_name.text );
+                    
+                    if( controller_id == 0 )
+                        ExternalInterface.call( "ReadyPlayer1" );
+                    else if( controller_id == 1 )
+                        ExternalInterface.call( "ReadyPlayer2" );
+                    else if( controller_id == 2 )
+                        ExternalInterface.call( "ReadyPlayer3" );
+                    else if( controller_id == 3 )
+                        ExternalInterface.call( "ReadyPlayer4" );
+                }
+                break;
+            case NameEntryEvent.ENTRY_REJECTED:
+                if( controller_id != 0 )
+                    TransitionToPressA();
+                break;
+            default:
+                return;
+            }
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        private function HandlePressAButtonPresses( input_event:InputEvent )
+        {
+            if( input_event.details.value != InputValue.KEY_UP )
+                return;
+            
+            if( input_event.details.controllerIndex != controller_id )
+                return;
+
+            switch( input_event.details.navEquivalent )
+            {
+            case NavigationCode.GAMEPAD_A:
+            case NavigationCode.GAMEPAD_START:
+                PlayUDKSound( "MenuSounds", "ThiefCardOpened" );
+                TransitionToNameEntry();
+                removeEventListener( InputEvent.INPUT, HandlePressAButtonPresses );
+                break;
+            default:
+                return;
+            }
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        private function HandleReadyButtonPresses( input_event:InputEvent )
+        {
+            if( input_event.details.value != InputValue.KEY_UP )
+                return;
+            
+            if( input_event.details.controllerIndex != controller_id )
+                return;
+
+            switch( input_event.details.navEquivalent )
+            {
+            case NavigationCode.GAMEPAD_B:
+                TransitionToNameEntry();
+                removeEventListener( InputEvent.INPUT, HandleReadyButtonPresses );
+                
+                switch( controller_id )
+                {
+                case 0:
+                    ExternalInterface.call( "UnreadyPlayer1" );
+                    break;
+                case 1:
+                    ExternalInterface.call( "UnreadyPlayer2" );
+                    break;
+                case 2:
+                    ExternalInterface.call( "UnreadyPlayer3" );
+                    break;
+                case 3:
+                    ExternalInterface.call( "UnreadyPlayer4" );
+                    break;
+                default:
+                    break;
+                }
+                break;
+            default:
+                return;
+            }
+        }
+        
+        
+        
+        // ++++++++++++++++++++++++++++++++++++++++ Transitions +++++++++++++++++++++++++++++++++++++++++++//
+        //---------------------------------------------------------------------------------------------------
+        function TransitionOutPreviousFrame()
+        {
+            DisableButtonInput();
+            switch( current_frame )
+            {
+            case FRAME_PressA:
+                transition_out_alpha = new Tween( mc_frame_press_start, "alpha", Regular.easeOut, 1.0, 0.0, TRANSITION_OUT_SECONDS, true );
+                break;
+            case FRAME_NameEntry:
+                transition_out_alpha = new Tween( mc_frame_name_entry, "alpha", Regular.easeOut, 1.0, 0.0, TRANSITION_OUT_SECONDS, true );
+                break;
+            case FRAME_Ready:
+                transition_out_alpha = new Tween( mc_frame_ready, "alpha", Regular.easeOut, 1.0, 0.0, TRANSITION_OUT_SECONDS, true );
+                break;
+            case FRAME_None:
+            default:
+                TransitionInNextFrame( null );
+                return;
+            }
+            transition_out_alpha.addEventListener( TweenEvent.MOTION_FINISH, TransitionInNextFrame );
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        function TransitionInNextFrame( tween_event:TweenEvent )
+        {
+            switch( current_frame )
+            {
+            case FRAME_PressA:
+                transition_in_alpha = new Tween( mc_frame_press_start, "alpha", Regular.easeOut, 0.0, 1.0, TRANSITION_IN_SECONDS, true );
+                break;
+            case FRAME_NameEntry:
+                transition_in_alpha = new Tween( mc_frame_name_entry, "alpha", Regular.easeOut, 0.0, 1.0, TRANSITION_IN_SECONDS, true );
+                break;
+            case FRAME_Ready:
+                transition_in_alpha = new Tween( mc_frame_ready, "alpha", Regular.easeOut, 0.0, 1.0, TRANSITION_IN_SECONDS, true );
+                break;
+            case FRAME_None:
+                if( controller_id == 0 )
+                    transition_in_alpha = new Tween( mc_frame_name_entry, "alpha", Regular.easeOut, 0.0, 1.0, TRANSITION_IN_SECONDS, true );
+                else
+                    transition_in_alpha = new Tween( mc_frame_press_start, "alpha", Regular.easeOut, 0.0, 1.0, TRANSITION_IN_SECONDS, true );
+                break;
+            default:
+                return;
+            }
+            transition_in_alpha.addEventListener( TweenEvent.MOTION_FINISH, EnableButtonInput );
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        public function TransitionToPressA()
+        {
+            ExternalInterface.call( "LocalizePressAFrame" );
+            PlayUDKSound( "MenuSounds", "ThiefCardTransition" );
+            TransitionOutPreviousFrame();
+            current_frame = FRAME_PressA;
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        public function TransitionToNameEntry()
+        {
+            ExternalInterface.call( "LocalizeNameEntryFrame" );
+            PlayUDKSound( "MenuSounds", "ThiefCardTransition" );
+            TransitionOutPreviousFrame();
+            current_frame = FRAME_NameEntry;
+            
+        }
+        
+        //---------------------------------------------------------------------------------------------------
+        public function TransitionToPlayerReady( player_name:String )
+        {
+            ExternalInterface.call( "LocalizePlayerReadyFrame" );
+            PlayUDKSound( "MenuSounds", "ThiefCardTransition" );
+            TransitionOutPreviousFrame();
+            current_frame = FRAME_Ready;
+            mc_frame_ready.text_player_name.text = player_name;
+            mc_frame_ready.mc_swords.gotoAndStop( 0 );
+        }       
+    }
+
+    </code>
+</pre>
+
+</section></p>
+
+						</div>
+					</li>
+				
+					<li>
+						<div class="collapsible-header" id="work-sample-header">
+							<i class="fa fa-chevron-down collapsible-indicator"></i>
+							Opening Cutscene
+							<span class="right">
+								
+								
+							</span>
+						</div>
+						<div class="collapsible-body">
+							
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="motivation">
+<h3 id="motivation">Motivation</h3>
+
+<p>For playing cutscenes, UDK requires using the Bink format and its native player. However, as students with no native code access, UDK&rsquo;s Bink player has a major downside: the only play function is an exec command called MOVIETEST.</p>
+
+<p>The MOVIETEST function loads the movie and then stops the engine completely to play it. This means that the cutscenes are unskippable (input has been stopped) and can&rsquo;t have subtitles (the message system is also stopped.) Our team believed that lacking those two features in our cutscene would make for a bad player experience, so we made a custom cutscene player in flash to fix this problem.</p>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="design">
+<h3 id="design">Design</h3>
+
+<p>Our flash file template for cutscenes is devised of four layers:</p>
+
+<ul>
+<li>An object that watches for button presses and fires an event to Unreal on any button press to end the cutscene.</li>
+<li>A text container that is used to display subtitle data on top of the cutscene.</li>
+<li>The cutscene itself, hand-animated by our amazing artists.</li>
+<li>An event layer, where we manually timed when to fire subtitles.</li>
+</ul>
+
+</section></p>
+
+<h3 id="code">Code</h3>
+
+<p>
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="cutscene-skip">
+<h4 id="cutscene-skip">Cutscene Skip</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+//timer to prevent the cutscene from being skipped for the first two seconds (also hides the frame)
+const ONE_SECOND_IN_MS = 1000;
+var skip_allowed_timer:Timer = new Timer( ONE_SECOND_IN_MS, 2 );
+skip_allowed_timer.addEventListener( TimerEvent.TIMER_COMPLETE, AllowSkipping );
+
+var fade_in_skip_tween:Tween;
+
+function AllowSkipping( timer_event:TimerEvent )
+{
+    // fade in our skip prompt so that we're not distracting, and attach the event listener so they can skip
+    fade_in_skip_tween = new Tween( mc_skip_clip, "alpha", Regular.easeOut, 0.0, 1.0, FADE_LENGTH_SECONDS, true );
+    fade_in_skip_tween.start();
+    InputDelegate.getInstance().addEventListener(InputEvent.INPUT, HandleSkipInput );
+}
+
+function HandleSkipInput( input_event:InputEvent )
+{
+    if( input_event.details.value != InputValue.KEY_UP )
+        return;
+
+    switch( input_event.details.navEquivalent )
+    {
+    case NavigationCode.GAMEPAD_A:
+    case NavigationCode.GAMEPAD_START:
+        InputDelegate.getInstance().removeEventListener(InputEvent.INPUT, HandleSkipInput );
+        ExternalInterface.call( "EndCutscene" );
+        break;
+    default:
+        return;
+    }
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="subtitle-display">
+<h4 id="subtitle-display">Subtitle Display</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-actionscript">
+        
+const FADE_LENGTH_SECONDS = 0.3;
+const ONE_SECOND_IN_MILLIS = 1000;
+
+var fade_in_tween:Tween;
+var fade_out_tween:Tween;
+
+var subtitle_timer:Timer = new Timer( ONE_SECOND_IN_MILLIS, 1 );
+subtitle_timer.addEventListener( TimerEvent.TIMER_COMPLETE, HideSubtitle );
+
+var subtitle_seconds_shown:Number = 1.0;
+
+function ShowSubtitle()
+{
+    //mc_subtitle.text_subtitle.text = subtitle_text;
+    fade_in_tween = new Tween( mc_subtitle, "alpha", Regular.easeOut, 0.0, 1.0, FADE_LENGTH_SECONDS, true );
+    subtitle_timer.start();
+}
+
+function HideSubtitle( timer_event:TimerEvent )
+{
+    fade_out_tween = new Tween( mc_subtitle, "alpha", Regular.easeOut, 1.0, 0.0, FADE_LENGTH_SECONDS, true );
+    //fade_out_tween.addEventListener( TweenEvent.MOTION_FINISH, ClearSubtitle );
+}
+
+function ClearSubtitle()
+{
+    mc_subtitle.text_subtitle.text = "";
+}
+
+function PlayMessage( message_number:uint, message_length:Number )
+{
+    ExternalInterface.call( "PlayCutsceneMessage", message_number );
+    if( Extensions.isGFxPlayer )
+    {
+        mc_subtitle.Show( "Subtitle will show here.", message_length );
+    }
+}
+
+    </code>
+</pre>
+
+</section>
+
+
+	
+	
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+
+
+
+<section class="section scrollspy" id="unrealscript-backend">
+<h4 id="unrealscript-backend">Unrealscript Backend</h4>
+
+<pre class="card-panel line-numbers" data-start="1" style="white-space: pre-wrap;">
+    <code class="language-unrealscript">
+        
+class SSG_Cutscene_Opening extends GfxMoviePlayer;
+
+var class<SSG_Message_Cutscene_Opening> MessageClass;
+var string NextLevelName;
+var SSG_Cutscene_Subtitle_Object Subtitle;
+var string LocalizationSection;
+
+
+//++++++++++++++++++++++++++++++++++++++++++ Lifecycle Functions +++++++++++++++++++++++++++++++++++++++++//
+//----------------------------------------------------------------------------------------------------------
+function bool Start( optional bool StartPaused = false )
+{
+    super.Start();
+
+    SetViewScaleMode(SM_ExactFit);
+    SetAlignment(Align_TopLeft);
+    
+    return true;
+}
+
+//----------------------------------------------------------------------------------------------------------
+function Init( optional LocalPlayer playerController )
+{
+    Start();
+    Advance(0.f);
+
+    SetViewScaleMode(SM_ExactFit);
+    SetAlignment(Align_TopLeft);
+
+    Subtitle = SSG_Cutscene_Subtitle_Object( GetVariableObject( "_root.mc_subtitle", class'SSG_Cutscene_Subtitle_Object' ) );
+}
+
+//----------------------------------------------------------------------------------------------------------
+function LocalizeSkipFrame()
+{
+    local GFxObject SkipFrameText;
+    local string SkipFrameTextString;
+
+    SkipFrameText = GetVariableObject("_root.mc_skip_clip.text_press");
+    SkipFrameTextString = class'Text_Localizer'.static.GetLocalizedStringWithName(LocalizationSection, "cutsceneClipPress");
+    SkipFrameText.SetText(SkipFrameTextString);
+
+    SkipFrameText = GetVariableObject("_root.mc_skip_clip.text_to_skip");
+    SkipFrameTextString = class'Text_Localizer'.static.GetLocalizedStringWithName(LocalizationSection, "cutsceneClipToSkip");
+    SkipFrameText.SetText(SkipFrameTextString);
+}
+
+//----------------------------------------------------------------------------------------------------------
+function PlayCutsceneMessage( int MessageNumber )
+{
+    SSG_PlayerController( GetPC() ).Announcer.PlayAnnouncement( MessageClass, MessageNumber );
+    Subtitle = SSG_Cutscene_Subtitle_Object( GetVariableObject( "_root.mc_subtitle", class'SSG_Cutscene_Subtitle_Object' ) );
+    Subtitle.Show( MessageClass.static.GetString( MessageNumber ), MessageClass.static.GetSubtitleLengthSeconds( MessageNumber ) );
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+function EndCutscene()
+{
+    SetPause( true );
+    ConsoleCommand( "open " $ NextLevelName );
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------
+DefaultProperties
+{
+    MovieInfo=SwfMovie'SSG_Opening_Cutscene.SSG_Opening_Cutscene'
+    TimingMode=TM_Real
+    Priority=10
+
+    bBlurLesserMovies=true
+
+    bDisplayWithHudOff=true
+    bPauseGameWhileActive=false
+
+    bAllowFocus=true
+    bAllowInput=true
+    bCaptureInput=true
+    bCaptureMouseInput=true
+
+    LocalizationSection="SSG_Cutscene"
+    MessageClass=class'SSG_Message_Cutscene_Opening'
+    NextLevelName="SGS-MapMenu.udk";
+
+    //SoundThemes(0)=( ThemeName=MenuSounds, Theme=UISoundTheme'SSG_FlashAssets.Sound.SSG_SoundTheme' )
+}
+
+    </code>
+</pre>
+
+</section></p>
+
+						</div>
+					</li>
+				
+				</ul>
 			
 		</div>
-		
+
       <div id="downloads">
 		
 			
